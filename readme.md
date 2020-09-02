@@ -1,8 +1,8 @@
-# Gupo 74
+# Gupo 74 :computer: :gem: :diamonds:
 
 ## Integrantes:
-## Sebastian Villablanca
-## Javier Zagal 
+:suspect: Sebastian Villablanca
+:rage1: Javier Zagal 
 
 
 
