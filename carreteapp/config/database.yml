@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: rewii908
+  pool: 5
+
+production:
+  <<: *default
+  database: carreteapp_production
+
+development:
+  <<: *default
+  database: carreteapp_development
+
+test:
+  <<: *default
+  database: carreteapp_test
