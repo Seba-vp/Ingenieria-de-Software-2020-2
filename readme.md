@@ -1,5 +1,7 @@
 # Gupo 74 :computer: :gem: :diamonds:
 
+#Link a la app: https://carreteapp.herokuapp.com/
+
 ## Integrantes:
 
 :suspect: Sebastian Villablanca
