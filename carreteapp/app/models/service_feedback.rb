@@ -1,0 +1,2 @@
+class ServiceFeedback < ApplicationRecord
+end

@@ -1,0 +1,42 @@
+<h1>Nueva Usuario </h1>
+
+<h4><%= notice%> </h4>
+
+<%= form_with(model: @user , method: :post) do |form| %>
+
+    <div class="field" >
+        <%= form.label :name%>
+        <%= form.text_field :name%>
+    </div>
+    <div class="field" >
+        <%= form.label :age%>
+        <%= form.number_field :age%>
+    </div>
+    <div class="field" >
+        <%= form.label :phone%>
+        <%= form.text_field :phone%>
+    </div>
+    <div class="field" >
+        <%= form.label :picture%>
+        <%= form.url_field :picture%>
+    </div>
+    <div class="field" >
+        <%= form.label :id_comuna%>
+        <%= form.number_field :id_comuna%>
+    </div>
+    <div class="field" >
+        <%= form.label :service_enable%>
+        <%= form.text_field :check_box%>
+    </div>
+    <div class="field" >
+        <%= form.label :password%>
+        <%= form.text_field :password%>
+    </div>    
+    <div class="action" >
+        <%= form.submit %>
+
+    </div>
+
+<% end %>
+
+<p> <%= link_to "Volver al listado", users_index_path%> </p>

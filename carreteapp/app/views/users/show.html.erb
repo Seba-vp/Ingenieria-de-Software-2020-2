@@ -1,0 +1,51 @@
+<p id="notice"> <%= notice %></p>
+
+<h1> Perfil de <%=@user.name %> </h1>
+
+
+<%= image_tag(@user.picture, alt: "like", class: "like_image_for_index") %>
+
+
+<table>
+
+    <tbody>
+        <tr>
+        <td> <strong> Id: </strong></td>
+        <td> <%= @user.id %></td>
+        </tr>
+        <tr>
+        <td> <strong> Nombre: </strong></td>
+        <td> <%= @user.name %></td>
+        </tr>
+        <tr>
+        <td> <strong> Edad: </strong></td>
+        <td> <%=@user.age %></td>
+        </tr>
+        <tr>
+        <td> <strong> Telefono: </strong></td>
+        <td> <%=@user.phone %></td>
+        </tr>
+        <tr>
+        <td> <strong> Id comuna: </strong></td>
+        <td> <%=@user.id_comuna %></td>
+        </tr>                      
+        <tr>
+        <td> <strong> Cuenta de servicios: </strong></td>
+        <td> <%=@user.service_enable %></td>
+        </tr>
+        <tr>
+        <td> <strong> Password: </strong></td>
+        <td> <%=@user.password %></td>
+        </tr>         
+    </tbody>
+</table>
+
+
+<p> <%= link_to "Editar usuario", user_edit_path%> </p>
+<p> <%= link_to "Eliminar usuario", user_path, method: :delete%> </p>
+
+
+<p> <%= link_to "Volver al listado", users_index_path%> </p>
+
+
+

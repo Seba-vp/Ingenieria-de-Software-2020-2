@@ -1,0 +1,31 @@
+<h1>Todas las comunas</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Nombre </th>
+
+            <th colspan="2"> Acciones </th>
+
+        </tr>   
+    </thead>
+
+    <tbody>
+
+        <%= @comunas.each do |comuna| %>
+            <tr>
+            <td> <%=comuna.id %></td>
+            <td> <%=comuna.name %></td>
+            <td> <%= link_to "Ver mas", comuna_path(comuna.id) %></td>
+    
+
+            </tr>
+        <% end %>
+
+
+    </tbody>
+</table>
+
+<p> <%= link_to "Agregar una comuna", comunas_new_path%> </p>

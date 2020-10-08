@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  max_cap: 1
+  price: 1.5
+  picture: MyString
+  stars: 1
+
+two:
+  name: MyString
+  description: MyText
+  max_cap: 1
+  price: 1.5
+  picture: MyString
+  stars: 1

@@ -1,0 +1,21 @@
+<h1>Nueva Comuna </h1>
+
+<h4><%= notice%> </h4>
+
+<%= form_with(model: @comuna , method: :post) do |form| %>
+
+    <div class="field" >
+        <%= form.label :name%>
+        <%= form.text_field :name%>
+    </div>
+
+
+    <div class="action" >
+        <%= form.submit %>
+
+    </div>
+
+<% end %>
+
+<p> <%= link_to "Volver al listado", comunas_index_path%> </p>
+

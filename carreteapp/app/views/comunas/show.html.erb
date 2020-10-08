@@ -1,0 +1,22 @@
+<p id="notice"> <%= notice %></p>
+
+
+<p> 
+<strong> ID: </strong>
+<%=@comuna.id %>
+</p>
+
+
+
+<p> 
+<strong> Nombre: </strong>
+<%=@comuna.name %>
+</p>
+<p> <%= link_to "Editar comuna", comuna_edit_path%> </p>
+<p> <%= link_to "Eliminar comuna", comuna_path, method: :delete%> </p>
+
+
+<p> <%= link_to "Volver al listado", comunas_index_path%> </p>
+
+
+

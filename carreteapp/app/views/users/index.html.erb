@@ -1,0 +1,30 @@
+<h1>Todos los usuarios</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Nombre </th>
+
+
+        </tr>   
+    </thead>
+
+    <tbody>
+
+        <%= @users.each do |user| %>
+            <tr>
+            <td> <%=user.id %></td>
+            <td> <%=user.name %></td>
+            <td> <%= link_to "Ver mas", user_path(user.id) %></td>
+    
+
+            </tr>
+        <% end %>
+
+
+    </tbody>
+</table>
+
+<p> <%= link_to "Agregar un usuario", users_new_path%> </p>
