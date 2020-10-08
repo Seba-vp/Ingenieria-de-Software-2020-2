@@ -1,4 +1,4 @@
-class PagesController 
+class PagesController< ApplicationController
     def home
         puts "Hello world "
         @greeting = "La acción del controlador dice: Hola Mundo!"
