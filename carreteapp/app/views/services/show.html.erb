@@ -1,2 +1,45 @@
-<h1>Services#show</h1>
-<p>Find me in app/views/services/show.html.erb</p>
+<p id="notice"> <%= notice %></p>
+
+<h1> <%=@service.name %> </h1>
+
+
+<%= image_tag(@service.picture, alt: "like", class: "like_image_for_index") %>
+
+
+<table>
+
+    <tbody>
+        <tr>
+        <td> <strong> Id: </strong></td>
+        <td> <%= @service.id %></td>
+        </tr>
+        <tr>
+        <td> <strong> Nombre: </strong></td>
+        <td> <%= @service.name %></td>
+        </tr>
+        <tr>
+        <td> <strong> Descripcion: </strong></td>
+        <td> <%=@service.description %></td>
+        </tr>
+        <tr>
+        <td> <strong> Capacidad maxíma: </strong></td>
+        <td> <%=@service.max_cap %></td>
+        </tr>
+        <tr>
+        <td> <strong> Precio: </strong></td>
+        <td> <%=@service.price %></td>
+        </tr>                      
+        <tr>
+        <td> <strong> Calificación: </strong></td>
+        <td> <%=@service.stars %></td>
+        </tr>       
+    </tbody>
+</table>
+
+
+<p> <%= link_to "Editar servicio", service_edit_path%> </p>
+<p> <%= link_to "Eliminar servicio", service_path, method: :delete%> </p>
+
+
+<p> <%= link_to "Volver al listado", services_index_path%> </p>
+
