@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
 
   #posts -> RSPEC DONE 40%
-=======
- 
-  #admins
->>>>>>> origin
   get 'posts/new', to: "posts#new" 
   post 'posts', to: "posts#create"
 
@@ -30,15 +25,9 @@ Rails.application.routes.draw do
 
   delete 'admins/:id', to: "admins#delete"
 
-<<<<<<< HEAD
-  #feedbacks -> RSPEC DONE 40%
-  get 'service_feedbacks/new', to: "service_feedbacks#new" 
-  post 'service_feedbacks', to: "service_feedbacks#create"
-=======
   #feedbacks
   get 'feedbacks/new', to: "feedbacks#new" 
   post 'feedbacks', to: "feedbacks#create"
->>>>>>> origin
 
   get 'feedbacks/index', to: "feedbacks#index"
   get 'feedbacks/:id', to: "feedbacks#show", as: "feedback"
@@ -125,5 +114,5 @@ Rails.application.routes.draw do
   
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'pages#home'
+  root to: 'pages#home', as: "home"
 end
