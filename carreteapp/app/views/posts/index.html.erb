@@ -1,2 +1,30 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Todos los posts</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Titulo </th>
+
+
+        </tr>   
+    </thead>
+
+    <tbody>
+
+        <%= @posts.each do |post| %>
+            <tr>
+            <td> <%=post.id %></td>
+            <td> <%=post.title %></td>
+            <td> <%= link_to "Ver mas", post_path(post.id) %></td>
+    
+
+            </tr>
+        <% end %>
+
+
+    </tbody>
+</table>
+
+<p> <%= link_to "Agregar un post", posts_new_path%> </p>
