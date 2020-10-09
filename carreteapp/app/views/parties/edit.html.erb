@@ -1,2 +1,55 @@
-<h1>Parties#edit</h1>
-<p>Find me in app/views/parties/edit.html.erb</p>
+<h1>Editar carrete  </h1>
+
+<h4><%= notice%> </h4>
+
+<%= form_with(model: @party , method: :patch, url: party_update_path(@party.id) ) do |form| %>
+
+   
+    <div class="field" >
+        <%= form.label :title%>
+        <%= form.text_field :title%>
+    </div>
+    <div class="field" >
+        <%= form.label :description%>
+        <%= form.text_area :decription%>
+    </div>
+    <div class="field" >
+        <%= form.label :address%>
+        <%= form.text_field :address%>
+    </div>
+    <div class="field" >
+        <%= form.label :picture%>
+        <%= form.url_field :picture%>
+    </div>
+    <div class="field" >
+        <%= form.label :id_comuna%>
+        <%= form.number_field :id_comuna%>
+    </div>
+    <div class="field" >
+        <%= form.label :base_cost%>
+        <%= form.number_field :base_cost%>
+    </div>
+    <div class="field" >
+        <%= form.label :total_cost%>
+        <%= form.number_field :total_cost%>
+    </div>
+    <div class="field" >
+        <%= form.label :max_cap%>
+        <%= form.number_field :max_cap%>
+    </div>
+    <div class="field" >
+        <%= form.label :date%>
+        <%= form.datetime_field :date%>
+    </div>
+    <div class="field" >
+        <%= form.label :date_final%>
+        <%= form.datetime_field :date_final%>
+    </div>         
+    <div class="action" >
+        <%= form.submit %>
+
+    </div>
+
+<% end %>
+
+<p> <%= link_to "Volver al carrete", party_path(@party.id)%> </p>

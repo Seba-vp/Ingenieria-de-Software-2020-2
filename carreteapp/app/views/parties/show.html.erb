@@ -1,2 +1,60 @@
-<h1>Parties#show</h1>
-<p>Find me in app/views/parties/show.html.erb</p>
+<p id="notice"> <%= notice %></p>
+
+<h1>  <%=@party.title %> </h1>
+
+
+<%= image_tag(@party.picture, alt: "like", class: "like_image_for_index") %>
+
+
+<table>
+
+    <tbody>
+        <tr>
+        <td> <strong> Id: </strong></td>
+        <td> <%= @party.id %></td>
+        </tr>
+        <tr>
+        <td> <strong> Titulo: </strong></td>
+        <td> <%= @party.title %></td>
+        </tr>
+        <tr>
+        <td> <strong> Descripción: </strong></td>
+        <td> <%=@party.description %></td>
+        </tr>
+        <tr>
+        <td> <strong> Dirección: </strong></td>
+        <td> <%=@party.address %></td>
+        </tr>
+        <tr>
+        <td> <strong> Id comuna: </strong></td>
+        <td> <%=@party.id_comuna %></td>
+        </tr>                      
+        <tr>
+        <td> <strong> Costo base (sin servicios): </strong></td>
+        <td> <%=@party.base_cost %></td>
+        </tr>
+        <tr>
+        <td> <strong> Costo total: </strong></td>
+        <td> <%=@party.total_cost %></td>
+        </tr>
+        <tr>
+        <td> <strong> Capacidad maxima: </strong></td>
+        <td> <%=@party.max_cap %></td>
+        </tr>          
+        <tr>
+        <td> <strong> Fecha del carrete: </strong></td>
+        <td> <%=@party.date %></td>
+        </tr>  
+        <tr>
+        <td> <strong> Fecha limite para buscar asistentes: </strong></td>
+        <td> <%=@party.date_final %></td>
+        </tr>         
+    </tbody>
+</table>
+
+
+<p> <%= link_to "Editar carrete", party_edit_path%> </p>
+<p> <%= link_to "Eliminar carrete", party_path, method: :delete%> </p>
+
+
+<p> <%= link_to "Volver al listado", parties_index_path%> </p>
