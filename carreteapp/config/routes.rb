@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+ 
   #admins
   get 'posts/new', to: "posts#new" 
   post 'posts', to: "posts#create"
@@ -26,16 +26,16 @@ Rails.application.routes.draw do
   delete 'admins/:id', to: "admins#delete"
 
   #feedbacks
-  get 'service_feedbacks/new', to: "service_feedbacks#new" 
-  post 'service_feedbacks', to: "service_feedbacks#create"
+  get 'feedbacks/new', to: "feedbacks#new" 
+  post 'feedbacks', to: "feedbacks#create"
 
-  get 'service_feedbacks/index', to: "service_feedbacks#index"
-  get 'service_feedbacks/:id', to: "service_feedbacks#show", as: "service_feedback"
+  get 'feedbacks/index', to: "feedbacks#index"
+  get 'feedbacks/:id', to: "feedbacks#show", as: "feedback"
 
-  get 'service_feedbacks/:id/edit', to: "service_feedbacks#edit", as: "service_feedback_edit"
-  patch 'service_feedbacks/:id', to:"service_feedbacks#update", as: "service_feedback_update"
+  get 'feedbacks/:id/edit', to: "feedbacks#edit", as: "feedback_edit"
+  patch 'feedbacks/:id', to:"feedbacks#update", as: "feedback_update"
 
-  delete 'service_feedbacks/:id', to: "service_feedbacks#delete"
+  delete 'feedbacks/:id', to: "feedbacks#delete"
 
   #services
   get 'services/new', to: "services#new" 
@@ -52,27 +52,27 @@ Rails.application.routes.draw do
 
   #parties
   get 'parties/new', to: "parties#new" 
-  post 'parties/create', to: "parties#create"
+  post 'parties', to: "parties#create"
 
   get 'parties/index', to: "parties#index"
-  get 'parties/show', to: "parties#show", as: "partie"
+  get 'parties/:id', to: "parties#show", as: "party"
 
-  get 'parties/edit', to: "parties#edit", as: "partie_edit"
-  patch 'parties/update', to:"parties#update", as: "partie_update"
+  get 'parties/:id/edit', to: "parties#edit", as: "party_edit"
+  patch 'parties/:id', to:"parties#update", as: "party_update"
 
-  delete 'parties/delete', to: "parties#delete"
+  delete 'parties/:id', to: "parties#delete"
 
  #Interestes
   get 'interesteds/new', to: "interesteds#new" 
-  post 'interesteds/create', to: "interesteds#create"
+  post 'interesteds', to: "interesteds#create"
 
   get 'interesteds/index', to: "interesteds#index"
-  get 'interesteds/show', to: "interesteds#show", as: "interested"
+  get 'interesteds/:id', to: "interesteds#show", as: "interested"
 
-  get 'interesteds/edit', to: "interesteds#edit", as: "interested_edit"
-  patch 'interesteds/update', to:"interesteds#update", as: "interested_update"
+  get 'interesteds/:id/edit', to: "interesteds#edit", as: "interested_edit"
+  patch 'interesteds/:id', to:"interesteds#update", as: "interested_update"
 
-  delete 'interesteds/delete', to: "interesteds#delete"
+  delete 'interesteds/:id', to: "interesteds#delete"
   
   
   #Users

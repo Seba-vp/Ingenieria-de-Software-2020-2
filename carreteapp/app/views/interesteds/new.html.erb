@@ -1,2 +1,31 @@
-<h1>Interesteds#new</h1>
-<p>Find me in app/views/interesteds/new.html.erb</p>
+<h1>Nueva interacción usuario interesado en carrete </h1>
+
+<h4><%= notice%> </h4>
+
+<%= form_with(model: @interested , method: :post) do |form| %>
+
+    <div class="field" >
+        <%= form.label :user_id%>
+        <%= form.number_field :user_id%>
+    </div>
+    <div class="field" >
+        <%= form.label :party_id%>
+        <%= form.number_field :party_id%>
+    </div>
+    <div class="field" >
+        <%= form.label :willing_pay%>
+        <%= form.number_field :willing_pay%>
+    </div>
+    <div class="field" >
+        <%= form.label :code%>
+        <%= form.text_field :code%>
+    </div>
+    
+    <div class="action" >
+        <%= form.submit %>
+
+    </div>
+
+<% end %>
+
+<p> <%= link_to "Volver al listado", interesteds_index_path%> </p>

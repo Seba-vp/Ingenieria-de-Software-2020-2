@@ -1,2 +1,31 @@
-<h1>Interesteds#show</h1>
-<p>Find me in app/views/interesteds/show.html.erb</p>
+<p id="notice"> <%= notice %></p>
+
+<h1> Relacion de  id <%=@interested.id %> </h1>
+
+<table>
+
+    <tbody>
+        <tr>
+        <td> <strong> Id de usuario interesado en carrete: </strong></td>
+        <td> <%= @interested.user_id %></td>
+        </tr>
+        <tr>
+        <td> <strong> Id de carrete: </strong></td>
+        <td> <%= @interested.party_id %></td>
+        </tr>
+        <tr>
+        <td> <strong> Dinero dispuesto a pagar: </strong></td>
+        <td> <%=@interested.willing_pay %></td>
+        </tr>
+        <tr>
+        <td> <strong> Codigo para entrar al carrete: </strong></td>
+        <td> <%=@interested.code %></td>
+        </tr>       
+    </tbody>
+</table>
+
+
+<p> <%= link_to "Eliminar relación", interested_path, method: :delete%> </p>
+
+
+<p> <%= link_to "Volver al listado", interesteds_index_path%> </p>
