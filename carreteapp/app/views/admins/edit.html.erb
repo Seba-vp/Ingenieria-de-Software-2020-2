@@ -1,2 +1,26 @@
-<h1>Admins#edit</h1>
-<p>Find me in app/views/admins/edit.html.erb</p>
+<h1>Editar administrador  </h1>
+
+<h4><%= notice%> </h4>
+
+<%= form_with(model: @admin , method: :patch, url: admin_update_path(@admin.id) ) do |form| %>
+
+    <div class="field" >
+        <%= form.label :name%>
+        <%= form.text_field :name%>
+    </div>
+   
+    <div class="field" >
+        <%= form.label :password%>
+        <%= form.text_field :password%>
+    </div>    
+
+    <div class="action" >
+        <%= form.submit %>
+
+    </div>
+
+<% end %>
+
+<p> <%= link_to "Volver al perfil de administrador", admin_path(@admin.id)%> </p>
+
+

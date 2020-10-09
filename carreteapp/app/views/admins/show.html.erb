@@ -1,2 +1,37 @@
-<h1>Admins#show</h1>
-<p>Find me in app/views/admins/show.html.erb</p>
+<p id="notice"> <%= notice %></p>
+
+<h1> Perfil del administrador <%=@admin.name %> </h1>
+
+
+
+
+
+<table>
+
+    <tbody>
+        <tr>
+        <td> <strong> Id: </strong></td>
+        <td> <%= @admin.id %></td>
+        </tr>
+        
+        <tr>
+        <td> <strong> Nombre: </strong></td>
+        <td> <%= @admin.name %></td>
+        </tr>
+
+        <tr>
+        <td> <strong> Password: </strong></td>
+        <td> <%=@admin.password %></td>
+        </tr>         
+    </tbody>
+</table>
+
+
+<p> <%= link_to "Editar administrador", admin_edit_path%> </p>
+<p> <%= link_to "Eliminar administrador", admin_path, method: :delete%> </p>
+
+
+<p> <%= link_to "Volver al listado", admins_index_path%> </p>
+
+
+

@@ -1,2 +1,22 @@
-<h1>Admins#new</h1>
-<p>Find me in app/views/admins/new.html.erb</p>
+<h1>Nuevo Admin </h1>
+
+<h4><%= notice%> </h4>
+
+<%= form_with(model: @admin , method: :post) do |form| %>
+
+    <div class="field" >
+        <%= form.label :name%>
+        <%= form.text_field :name%>
+    </div>
+    <div class="field" >
+        <%= form.label :password%>
+        <%= form.text_field :password%>
+    </div>    
+    <div class="action" >
+        <%= form.submit %>
+
+    </div>
+
+<% end %>
+
+<p> <%= link_to "Volver al listado", admins_index_path%> </p>
