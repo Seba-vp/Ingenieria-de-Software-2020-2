@@ -1,2 +1,30 @@
-<h1>Feedbacks#index</h1>
-<p>Find me in app/views/feedbacks/index.html.erb</p>
+<h1>Todos los feedbacks</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Id de servicio </th>
+
+
+        </tr>   
+    </thead>
+
+    <tbody>
+
+        <%= @feedbacks.each do |feedback| %>
+            <tr>
+            <td> <%=feedback.id %></td>
+            <td> <%=feedback.service_id %></td>
+            <td> <%= link_to "Ver mas", feedback_path(feedback.id) %></td>
+    
+
+            </tr>
+        <% end %>
+
+
+    </tbody>
+</table>
+
+<p> <%= link_to "Agregar un feedback", feedbacks_new_path%> </p>

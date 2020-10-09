@@ -1,2 +1,28 @@
-<h1>Feedbacks#show</h1>
-<p>Find me in app/views/feedbacks/show.html.erb</p>
+<p id="notice"> <%= notice %></p>
+
+<h1> Feedback <%=@feedback.id %> </h1>
+
+
+<table>
+
+    <tbody>
+        <tr>
+        <td> <strong> Comentario: </strong></td>
+        <td> <%= @feedback.comment %></td>
+        </tr>
+        <tr>
+        <td> <strong> Estrellas: </strong></td>
+        <td> <%= @feedback.stars %></td>
+        </tr>
+        <tr>
+        <td> <strong> Id de servicio: </strong></td>
+        <td> <%=@feedback.service_id %></td>
+        </tr>
+
+    </tbody>
+</table>
+
+<p> <%= link_to "Eliminar feedback", feedback_path, method: :delete%> </p>
+
+
+<p> <%= link_to "Volver al listado", feedbacks_index_path%> </p>
