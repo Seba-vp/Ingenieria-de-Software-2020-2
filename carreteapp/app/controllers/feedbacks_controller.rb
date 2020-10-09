@@ -37,7 +37,7 @@ class FeedbacksController < ApplicationController
 
     if @feedback.update(@feedbacks_params)
 
-      redirect_to feedback_path(@feedback.id), notice: "Usuario editado correctamente."
+      redirect_to feedback_path(@feedback.id), notice: "Feeedback editado correctamente."
     else
       redirect_to feedback_edit_path(@feedback.id), notice: "Error al editar el usuario."
 
