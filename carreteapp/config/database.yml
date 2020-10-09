@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   host: localhost
   username: postgres
-  password: xinovp4234
+  password: rewii908
   pool: 5
 
 production:

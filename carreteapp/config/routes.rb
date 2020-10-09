@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  #admins
+  #posts -> RSPEC DONE 40%
   get 'posts/new', to: "posts#new" 
   post 'posts', to: "posts#create"
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   delete 'posts/:id', to: "posts#delete"
 
-  #admins
+  #admins -> RSPEC DONE 40%
   get 'admins/new', to: "admins#new" 
   post 'admins', to: "admins#create"
 
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   delete 'admins/:id', to: "admins#delete"
 
-  #feedbacks
+  #feedbacks -> RSPEC DONE 40%
   get 'service_feedbacks/new', to: "service_feedbacks#new" 
   post 'service_feedbacks', to: "service_feedbacks#create"
 
@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   delete 'service_feedbacks/:id', to: "service_feedbacks#delete"
 
-  #services
+  #services -> RSPEC DONE 40%
   get 'services/new', to: "services#new" 
   post 'services', to: "services#create"
 
@@ -50,7 +50,7 @@ Rails.application.routes.draw do
 
   delete 'services/:id', to: "services#delete"
 
-  #parties
+  #parties -> RSPEC DONE 40%
   get 'parties/new', to: "parties#new" 
   post 'parties/create', to: "parties#create"
 
@@ -62,7 +62,7 @@ Rails.application.routes.draw do
 
   delete 'parties/delete', to: "parties#delete"
 
- #Interestes
+ #Interesteds -> RSPEC DONE 40%
   get 'interesteds/new', to: "interesteds#new" 
   post 'interesteds/create', to: "interesteds#create"
 
@@ -75,7 +75,7 @@ Rails.application.routes.draw do
   delete 'interesteds/delete', to: "interesteds#delete"
   
   
-  #Users
+  #Users -> RSPEC DONE 40%
 
   #Create
   get 'users/new', to: "users#new" 
@@ -94,7 +94,7 @@ Rails.application.routes.draw do
   
 
 
-  #Comunas
+  #Comunas -> RSPEC DONE 40%
 
   #Create
   get 'comunas/new', to: "comunas#new" 
