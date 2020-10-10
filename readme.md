@@ -19,6 +19,7 @@
 <img src="Diagrama_ER_carreteapp.jpeg" >
 
 ## CRUDS:
+
 ### Las entidades generadas son las siguientes:
 
 ### Usuarios (user):
@@ -44,6 +45,13 @@ Se pueden crear, ver y eliminar entidades, concideramos que dada la naturaleza d
 
 ### Feedbacks de Servicios (feedback): 
 Se pueden crear, ver y eliminar entidades, concideramos que no es necesario ni util editar la entidad de feedback.
+
+
+
+
+## Rspec:
+
+Los test, funciona, el porcentaje de covertura es del 46%, para mas informacion ver el documento index.html, en la carpeta public/coverage .
 
 
 
