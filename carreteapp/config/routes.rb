@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
+
  
   #admins
+
+
+  #posts -> RSPEC DONE 40%
+
   get 'posts/new', to: "posts#new" 
   post 'posts', to: "posts#create"
 
