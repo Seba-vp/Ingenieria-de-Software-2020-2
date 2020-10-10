@@ -1,5 +1,24 @@
-<h1>Todos los admins</h1>
 
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Todos los admins</h1>
+</div>
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= home_path %> style="float:right"> Volver</a>
+</div>
+
+
+<div class="lista">
+<div class="card">
 
 <table>
     <thead>
@@ -13,7 +32,7 @@
 
     <tbody>
 
-        <%= @admins.each do |admin| %>
+        <% @admins.each do |admin| %>
             <tr>
             <td> <%=admin.id %></td>
             <td> <%=admin.name %></td>
@@ -22,9 +41,24 @@
 
             </tr>
         <% end %>
+        </tbody>
+        </table>
+        </div>
+        
+        <div class="card">
+        <p> <%= link_to "Agregar un admin", admins_new_path%> </p>
+        <p> <%= link_to "Volver a inicio", home_path %> </p>
+        </div>
+        </div>
+        
+        
+        
+        
+        <div class="footer">
+            <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+          </div>
+        </body>
+        </html>
+        
+        
 
-
-    </tbody>
-</table>
-
-<p> <%= link_to "Agregar un admin", admins_new_path%> </p>

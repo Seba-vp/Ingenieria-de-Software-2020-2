@@ -1,11 +1,22 @@
 <p id="notice"> <%= notice %></p>
 
-<h1> <%=@service.name %> </h1>
 
+
+<div class="header">
+<h1> <%=@service.name %> </h1>
+</div>
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= services_index_path%> style="float:right"> Volver</a>
+</div>
+
+<div class="lista">
 
 <%= image_tag(@service.picture, alt: "like", class: "like_image_for_index") %>
 
-
+<div class="card">
 <table>
 
     <tbody>
@@ -35,11 +46,21 @@
         </tr>       
     </tbody>
 </table>
+</div>
 
-
+<div class="card">
 <p> <%= link_to "Editar servicio", service_edit_path%> </p>
 <p> <%= link_to "Eliminar servicio", service_path, method: :delete%> </p>
 
 
 <p> <%= link_to "Volver al listado", services_index_path%> </p>
 
+</div>
+</div>
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>

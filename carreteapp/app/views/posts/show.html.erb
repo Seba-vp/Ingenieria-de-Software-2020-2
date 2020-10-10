@@ -1,11 +1,19 @@
 <p id="notice"> <%= notice %></p>
 
+<div class="header">
 <h1> Post <%=@post.title %> </h1>
+</div>
 
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
 
+  <a href= <%= posts_index_path%> style="float:right"> Volver</a>
+</div>
+
+<div class="lista">
 <%= image_tag(@post.picture, alt: "like", class: "like_image_for_index") %>
 
-
+<div class="card">
 <table>
 
     <tbody>
@@ -26,6 +34,9 @@
        
     </tbody>
 </table>
+</div>
+
+<div class="card">
 
 
 <p> <%= link_to "Editar post", post_edit_path%> </p>
@@ -33,6 +44,20 @@
 
 
 <p> <%= link_to "Volver al listado", posts_index_path%> </p>
+
+
+</div>
+</div>
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
+
+
 
 
 

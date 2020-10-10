@@ -20,16 +20,31 @@
 body {
   font-family: Arial;
   padding: 10px;
-  background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190619/ourmid/pngtree-understated-luxury-entertainment-club-activity-background-material-image_132977.jpg');
+  background: #091b26;
 }
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+
 
 /* Header/Blog Title */
 .header {
   padding: 30px;
   text-align: center;
-  background-image: { url('https://images-ext-1.discordapp.net/external/Wh4bB92ll9yon86JxArrC7i_Tp6SZdlEAu1ZAlUYo0I/%3Fcontent-type%3Dimage%252Fjpeg/https/images.squarespace-cdn.com/content/565f14c3e4b0f2a7710b1a62/1460976513712-J1ZAH77FY13WPUXBPZMK/garden1.jpg');
-    filter: opacity(50%);};
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+  background-image:  url('https://images-ext-1.discordapp.net/external/Wh4bB92ll9yon86JxArrC7i_Tp6SZdlEAu1ZAlUYo0I/%3Fcontent-type%3Dimage%252Fjpeg/https/images.squarespace-cdn.com/content/565f14c3e4b0f2a7710b1a62/1460976513712-J1ZAH77FY13WPUXBPZMK/garden1.jpg');
 }
+
 
 .header h1 {
   font-size: 50px;
@@ -63,10 +78,11 @@ body {
   float: left;
   width: 75%;
 }
-.lista{
+.lista {
     text-align: center;
     padding: 20x 20px;
 }
+
 
 /* Right column */
 .rightcolumn {
@@ -85,7 +101,7 @@ body {
 
 /* Add a card effect for articles */
 .card {
-  background-color: white;
+    background: #ddd;
   padding: 20px;
   margin-top: 20px;
 }
@@ -100,8 +116,9 @@ body {
 /* Footer */
 .footer {
   padding: 20px;
+  color: #ddd;
   text-align: center;
-  background: #ddd;
+  background:  #333;
   margin-top: 20px;
 }
 
