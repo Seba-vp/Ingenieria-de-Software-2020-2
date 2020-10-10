@@ -28,3 +28,5 @@
 
 #SimpleCov
 public/coverage
+
+config/database.yml

@@ -1,7 +1,18 @@
 <p id="notice"> <%= notice %></p>
 
+<div class="header">
 <h1> Relacion de  id <%=@interested.id %> </h1>
+</div>
 
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= interesteds_index_path%> style="float:right"> Volver</a>
+</div>
+
+<div class="lista">
+
+<div class="card">
 <table>
 
     <tbody>
@@ -23,9 +34,25 @@
         </tr>       
     </tbody>
 </table>
+</div>
 
+<div class="card">
 
 <p> <%= link_to "Eliminar relación", interested_path, method: :delete%> </p>
 
-
 <p> <%= link_to "Volver al listado", interesteds_index_path%> </p>
+
+</div>
+</div>
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
+
+
+
+

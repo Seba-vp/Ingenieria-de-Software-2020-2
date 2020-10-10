@@ -1,30 +1,62 @@
-<h1>Todos los servicios</h1>
 
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+
+
+<div class="header">
+<h1><h1>Todos los servicios</h1></h1>
+</div>
+
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= home_path %> style="float:right"> Volver</a>
+</div>
+
+
+<div class="lista">
+<div class="card">
 
 <table>
     <thead>
         <tr>
             <th> Id </th>
             <th> Nombre </th>
-
-
+            <th colspan = "2">  Ver mas </th>
         </tr>   
     </thead>
 
     <tbody>
 
-        <%= @services.each do |service| %>
+        <% @services.each do |service| %>
             <tr>
             <td> <%=service.id %></td>
             <td> <%=service.name %></td>
             <td> <%= link_to "Ver mas", service_path(service.id) %></td>
-    
-
             </tr>
         <% end %>
 
 
     </tbody>
 </table>
+</div>
 
+<div class="card">
 <p> <%= link_to "Agregar un servicio", services_new_path%> </p>
+<p> <%= link_to "Volver a inicio", home_path %> </p>
+</div>
+</div>
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+

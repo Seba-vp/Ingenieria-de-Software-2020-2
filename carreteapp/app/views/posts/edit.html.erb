@@ -1,9 +1,32 @@
-<h1>Editar post  </h1>
 
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+
+
+<div class="header">
+<h1>Editar post  </h1>
+</div>
+
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%=   post_path(@post.id)%> style="float:right"> Volver</a>
+</div>
+
+<div class="lista">
+
+<div class="card">
 <h4><%= notice%> </h4>
+</div>
 
 <%= form_with(model: @post , method: :patch, url: post_update_path(@post.id) ) do |form| %>
-
+    <div class="card">
     <div class="field" >
         <%= form.label :title%>
         <%= form.text_field :title%>
@@ -22,9 +45,20 @@
     <div class="action" >
         <%= form.submit %>
     </div>
+    </div>
 
 <% end %>
-
+<div class="card">
 <p> <%= link_to "Volver al post", post_path(@post.id)%> </p>
+</div>
+</div>
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
 
 

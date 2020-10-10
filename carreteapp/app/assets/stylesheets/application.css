@@ -13,3 +13,127 @@
  *= require_tree .
  *= require_self
  */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #091b26;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+  background-image:  url('https://images-ext-1.discordapp.net/external/Wh4bB92ll9yon86JxArrC7i_Tp6SZdlEAu1ZAlUYo0I/%3Fcontent-type%3Dimage%252Fjpeg/https/images.squarespace-cdn.com/content/565f14c3e4b0f2a7710b1a62/1460976513712-J1ZAH77FY13WPUXBPZMK/garden1.jpg');
+}
+
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+.lista {
+    text-align: center;
+    padding: 20x 20px;
+}
+
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+    background: #ddd;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  color: #ddd;
+  text-align: center;
+  background:  #333;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}

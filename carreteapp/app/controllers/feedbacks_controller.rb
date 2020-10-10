@@ -13,9 +13,9 @@ class FeedbacksController < ApplicationController
     
     if @feedback.save
 
-      redirect_to feedbacks_new_path, notice: "Usuario creado correctamente."
+      redirect_to feedbacks_new_path, notice: "Feedback creado correctamente."
     else
-      redirect_to feedbacks_new_path, notice: "Error al crear el usuario."
+      redirect_to feedbacks_new_path, notice: "Error al crear el feedback."
 
     end
 
@@ -39,7 +39,7 @@ class FeedbacksController < ApplicationController
 
       redirect_to feedback_path(@feedback.id), notice: "Feeedback editado correctamente."
     else
-      redirect_to feedback_edit_path(@feedback.id), notice: "Error al editar el usuario."
+      redirect_to feedback_edit_path(@feedback.id), notice: "Error al editar el feedback."
 
     end
 

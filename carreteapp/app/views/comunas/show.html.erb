@@ -1,6 +1,22 @@
 <p id="notice"> <%= notice %></p>
 
 
+
+<div class="header">
+<h1> <%=@comuna.name %> </h1>
+</div>
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= comunas_index_path%> style="float:right"> Volver</a>
+</div>
+
+<div class="lista">
+
+<div class="card">
+
+
 <p> 
 <strong> ID: </strong>
 <%=@comuna.id %>
@@ -12,11 +28,26 @@
 <strong> Nombre: </strong>
 <%=@comuna.name %>
 </p>
+
+<div class="card">
+
 <p> <%= link_to "Editar comuna", comuna_edit_path%> </p>
 <p> <%= link_to "Eliminar comuna", comuna_path, method: :delete%> </p>
 
 
 <p> <%= link_to "Volver al listado", comunas_index_path%> </p>
+
+</div>
+</div>
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
+
 
 
 

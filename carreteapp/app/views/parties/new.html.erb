@@ -1,7 +1,32 @@
-<h1>Nuev Carrete </h1>
 
-<h4> <%= notice %> </h4>
 
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+
+
+<div class="header">
+<h1>Nuevo Carrete </h1>
+</div>
+
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%=  parties_index_path%> style="float:right"> Volver</a>
+</div>
+
+<div class="lista">
+
+<div class="card">
+<h4><%= notice%> </h4>
+</div>
+
+<div class="card">
 <%= form_with(model: @party , method: :post) do |form| %>
 
     <div class="field" >
@@ -50,5 +75,18 @@
     </div>
 
 <% end %>
+</div>
 
+<div class="card">
 <p> <%= link_to "Volver al listado", parties_index_path%> </p>
+</div>
+</div>
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
+
