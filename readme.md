@@ -14,33 +14,35 @@
 
 ## Diagrama Entidad Relacion:
 
+(El archivo tambien esta en la carpeta docs)
+
 <img src="Diagrama_ER_carreteapp.jpeg" >
 
 ## CRUDS:
 ### Las entidades generadas son las siguientes:
 
-### Usuarios:
+### Usuarios (user):
 CRUD completo.
 
-### Admins: 
+### Admins (admin): 
 CRUD completo.
 
-### Comunas: 
+### Comunas (comuna): 
 CRUD completo.
 
-### Carretes: 
+### Carretes (party): 
 CRUD completo. 
 
-### Servicios: 
+### Servicios (service): 
 CRUD completo.
 
-### Posts: 
+### Posts (post): 
 CRUD completo.
 
-### Usuarios interesados en Carretes: 
+### Usuarios interesados en Carretes (interested): 
 Se pueden crear, ver y eliminar entidades, concideramos que dada la naturaleza de la tabla no es necesario editar este tipo de entidades.
 
-### Feedbacks de Servicios: 
+### Feedbacks de Servicios (feedback): 
 Se pueden crear, ver y eliminar entidades, concideramos que no es necesario ni util editar la entidad de feedback.
 
 
