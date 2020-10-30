@@ -11,13 +11,15 @@
 
 <div class="header">
 <h1>Nuevo Carrete </h1>
+<h1> <%= @user_id %></h1>
+
 </div>
 
 
 <div class="topnav">
   <a href= <%= home_path %> >Inicio</a>
 
-  <a href= <%=  parties_index_path%> style="float:right"> Volver</a>
+  <a href= <%=  parties_index_path%> style="float:right"> Todos los carretes</a>
 </div>
 
 <div class="lista">
@@ -78,7 +80,7 @@
 </div>
 
 <div class="card">
-<p> <%= link_to "Volver al listado", parties_index_path%> </p>
+<p> <%= link_to "Todos los carretes", parties_index_path%> </p>
 </div>
 </div>
 

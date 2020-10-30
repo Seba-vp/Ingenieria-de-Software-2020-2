@@ -1,0 +1,84 @@
+
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Interesados en asistir al carrete <%= @party.title %></h1>
+
+
+</div>
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= home_path %> style="float:right"> Volver</a>
+</div>
+
+
+<div class="lista">
+<div class="card">
+    <table>
+    <tr>
+        <td> Costo total del carrete:</td>  <td> <%= @party.total_cost %> </td>
+    </tr>
+    <tr>
+        <td>Total recaudado para el carrete:</td> <td><%= @total_amount %> </td>
+    </tr>
+    <tr>
+        <td>Diferencia:</td> <td><%= @diference %> </td>
+    </tr>
+    </table>
+</div>
+
+<div class="card">
+
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Id Usuario </th>
+            <th> Nombre Usuario </th>
+            <th> Monto dispuesto a pagar </th>
+
+
+        </tr>   
+    </thead>
+
+    <tbody>
+        
+        <% @interesteds.each do |interested| %>
+            <tr>
+            <td> <%=interested.id %></td>
+            <td> <%=interested.user_id %></td>
+            <td> <%= @users_names[interested.user_id] %></td>
+            <td> <%=interested.willing_pay %></td>
+            <!-- <td> <%= link_to "Ver mas", interested_path(interested.id) %></td>  -->
+    
+            </tr>
+        <% end %>
+
+
+    </tbody>
+</table>
+
+<div class="card">
+
+<p> <%= link_to "Volver a mis carretes", parties_myparties_path %> </p>
+</div>
+</div>
+
+
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
+
+

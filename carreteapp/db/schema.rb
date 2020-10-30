@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_023524) do
+ActiveRecord::Schema.define(version: 2020_10_30_061015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_023524) do
     t.datetime "date_final"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "id_creator"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -101,7 +102,6 @@ ActiveRecord::Schema.define(version: 2020_10_29_023524) do
     t.string "picture"
     t.integer "id_comuna"
     t.boolean "service_enable"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

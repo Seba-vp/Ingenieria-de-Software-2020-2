@@ -1,0 +1,63 @@
+
+
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+
+
+<div class="header">
+
+<h1> <%= @user.name %> esta postulando al carrete <%= @party.title %> </h1>
+
+</div>
+
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%=  interesteds_index_path%> style="float:right"> Volver</a>
+</div>
+
+<div class="lista">
+
+<div class="card">
+<h4><%= notice%> </h4>
+</div>
+
+<div class="card">
+<%= form_with(model: @interested , method: :post) do |form| %>
+
+    <div class="field" >
+        <%= form.label :willing_pay%>
+        <%= form.number_field :willing_pay%>
+    </div>
+
+  
+    <%= form.hidden_field :party_id, value: @party.id %>
+
+    <div class="action" >
+        <%= form.submit %>
+
+    </div>
+
+<% end %>
+
+</div>
+
+<div class="card">
+<p> <%= link_to "Volver al listado", interesteds_index_path%> </p>
+</div>
+</div>
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
+

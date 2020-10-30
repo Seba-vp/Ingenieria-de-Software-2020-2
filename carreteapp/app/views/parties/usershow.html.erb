@@ -67,19 +67,12 @@
 
 <div class="card">
 
-<% if @party.id_creator != current_user.id %>
-  <p> <%= link_to "Postular a carrete", interesteds_unew_path(:id => @party.id)%> </p>
-<% end %>
+<p> <%= link_to "Postular a carrete", party_edit_path%> </p>
 
-
-<% if @party.id_creator == current_user.id || current_admin %>
-  <p> <%= link_to "Ver estado los interesados en el carrete", interesteds_myinteresteds_path(:id => @party.id)%> </p>
-  <p> <%= link_to "Editar carrete", party_edit_path%> </p>
-  <p> <%= link_to "Eliminar carrete", party_path, method: :delete%> </p>
-<% end %>
 
 
 <p> <%= link_to "Todos los carretes", parties_index_path%> </p>
+
 
 </div>
 </div>
