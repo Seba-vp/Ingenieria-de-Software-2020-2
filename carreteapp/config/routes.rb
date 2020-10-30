@@ -76,6 +76,10 @@ Rails.application.routes.draw do
   post 'parties', to: "parties#create"
 
   get 'parties/index', to: "parties#index"
+  #Esto es nuevo OJO
+  get 'parties/myparties', to: "parties#myparties"
+
+
   get 'parties/:id', to: "parties#show", as: "party"
 
   get 'parties/:id/edit', to: "parties#edit", as: "party_edit"
@@ -84,10 +88,20 @@ Rails.application.routes.draw do
   delete 'parties/:id', to: "parties#delete"
 
  #Interesteds -> RSPEC DONE 40%
-  get 'interesteds/new', to: "interesteds#new" 
+
+  #para user
+  get 'interesteds/unew', to: "interesteds#unew"
+  post 'interesteds', to: "interesteds#ucreate"
+  
+  #para admin
+  get 'interesteds/new', to: "interesteds#new"
   post 'interesteds', to: "interesteds#create"
 
   get 'interesteds/index', to: "interesteds#index"
+
+  #Esto es nuevo OJO
+  get 'interesteds/myinteresteds', to: "interesteds#myinteresteds"
+
   get 'interesteds/:id', to: "interesteds#show", as: "interested"
 
   get 'interesteds/:id/edit', to: "interesteds#edit", as: "interested_edit"

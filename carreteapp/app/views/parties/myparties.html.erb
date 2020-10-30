@@ -1,0 +1,68 @@
+
+
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Carretes de @user.name </h1>
+
+<%= @parties %>
+</div>
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= home_path %> style="float:right"> Volver</a>
+</div>
+
+
+<div class="lista">
+<div class="card">
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Nombre </th>
+
+
+        </tr>   
+    </thead>
+
+    <tbody>
+
+        <% @parties.each do |party| %>
+            <tr>
+            <td> <%=party.id %></td>
+            <td> <%=party.title %></td>
+            <td> <%= link_to "Ver mas", party_path(party.id) %></td>
+    
+
+            </tr>
+        <% end %>
+
+
+    </tbody>
+</table>
+</div>
+
+<div class="card">
+<p> <%= link_to "Agregar un carrete", parties_new_path%> </p>
+<p> <%= link_to "Volver a inicio", home_path %> </p>
+</div>
+</div>
+
+
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,67 @@
+
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Todos las relaciones de interesados en asistir a fiestas </h1>
+</div>
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= home_path %> style="float:right"> Volver</a>
+</div>
+
+
+<div class="lista">
+<div class="card">
+
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Id Usuario </th>
+            <th> Id Carrete </th>
+
+
+        </tr>   
+    </thead>
+
+    <tbody>
+
+        <%= @interesteds.each do |interested| %>
+            <tr>
+            <td> <%=interested.id %></td>
+            <td> <%=interested.user_id %></td>
+            <td> <%=interested.party_id %></td>
+            <td> <%= link_to "Ver mas", interested_path(interested.id) %></td>
+    
+
+            </tr>
+        <% end %>
+
+
+    </tbody>
+</table>
+
+<div class="card">
+<p> <%= link_to "Agregar una relacion", interesteds_new_path%> </p>
+<p> <%= link_to "Volver a inicio", home_path %> </p>
+</div>
+</div>
+
+
+
+
+<div class="footer">
+    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+  </div>
+</body>
+</html>
+
+
+

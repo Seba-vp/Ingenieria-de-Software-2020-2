@@ -10,22 +10,59 @@
 <h2> Carrete app es una aplicación en desarrollo para organizar carretes </h2>
 </div>
 
-<div class="topnav">
-  <a href="#">Inicio</a>
-
-  <a href="#" style="float:right">Volver atras</a>
-</div>
 
 
 
 
 
-<% if current_user %>   
+
+<% if current_user %>
+    <div class="topnav">
+    <a href="#">Inicio</a>
+
+    <a href="#" style="float:right">Volver atras</a>
+    </div>   
+
     <div class="card">
-        <p> Hola usuario, <%= current_user.name %></p>
+        <h2> Hola usuario, <%= current_user.name %></h2>
 
         <button class="button"> 
             <%= link_to 'Cerrar sesíon', destroy_user_session_path, :method => :delete  %> 
+        </button>
+    </div>
+
+    <div class="card">
+        <h2> Editar perfil </h2>
+        <button class="button"> 
+            <%= link_to 'Editar usuario', edit_user_registration_path  %> 
+        </button>
+    </div>
+
+    <div class="card">
+        <h2> Crear Carrete </h2>
+        <button class="button"> 
+            <%= link_to 'Crear carrete', parties_new_path  %> 
+        </button>
+    </div>
+
+    <div class="card">
+        <h2> Ver carretes disponibles </h2>
+        <button class="button"> 
+            <%= link_to 'Ver carretes', parties_index_path  %> 
+        </button>
+    </div>
+
+    <div class="card">
+        <h2> Ver mis carretes </h2>
+        <button class="button"> 
+            <%= link_to 'Ver mis carretes', parties_myparties_path  %> 
+        </button>
+    </div>
+
+    <div class="card">
+        <h2> Crear servicio </h2>
+        <button class="button"> 
+            <%= link_to 'Crear servicio', services_new_path  %> 
         </button>
     </div>
 
