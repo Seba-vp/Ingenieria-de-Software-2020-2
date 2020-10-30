@@ -7,7 +7,9 @@
 <body>
 
 <div class="header">
-<h1>Todos las relaciones de interesados en asistir a fiestas </h1>
+<h1>Interesados en asistir al carrete <%= @party.title %></h1>
+
+
 </div>
 
 <div class="topnav">
@@ -19,28 +21,43 @@
 
 <div class="lista">
 <div class="card">
+    <table>
+    <tr>
+        <td> Costo total del carrete:</td>  <td> <%= @party.total_cost %> </td>
+    </tr>
+    <tr>
+        <td>Total recaudado para el carrete:</td> <td><%= @total_amount %> </td>
+    </tr>
+    <tr>
+        <td>Diferencia:</td> <td><%= @diference %> </td>
+    </tr>
+    </table>
+</div>
+
+<div class="card">
 
 <table>
     <thead>
         <tr>
             <th> Id </th>
             <th> Id Usuario </th>
-            <th> Id Carrete </th>
+            <th> Nombre Usuario </th>
+            <th> Monto dispuesto a pagar </th>
 
 
         </tr>   
     </thead>
 
     <tbody>
-
-        <%= @interesteds.each do |interested| %>
+        
+        <% @interesteds.each do |interested| %>
             <tr>
             <td> <%=interested.id %></td>
             <td> <%=interested.user_id %></td>
-            <td> <%=interested.party_id %></td>
-            <td> <%= link_to "Ver mas", interested_path(interested.id) %></td>
+            <td> <%= @users_names[interested.user_id] %></td>
+            <td> <%=interested.willing_pay %></td>
+            <!-- <td> <%= link_to "Ver mas", interested_path(interested.id) %></td>  -->
     
-
             </tr>
         <% end %>
 
@@ -49,8 +66,8 @@
 </table>
 
 <div class="card">
-<p> <%= link_to "Agregar una relacion", interesteds_new_path%> </p>
-<p> <%= link_to "Volver a inicio", home_path %> </p>
+
+<p> <%= link_to "Volver a mis carretes", parties_myparties_path %> </p>
 </div>
 </div>
 

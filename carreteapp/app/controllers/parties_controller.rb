@@ -27,7 +27,7 @@ class PartiesController < ApplicationController
     
     if @party.save
 
-      redirect_to parties_new_path, notice: "Carrete creado correctamente."
+      redirect_to parties_myparties_path, notice: "Carrete creado correctamente."
     else
       redirect_to parties_new_path, notice: "Error al crear el carrete."
 

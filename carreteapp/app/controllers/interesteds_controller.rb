@@ -8,7 +8,18 @@ class InterestedsController < ApplicationController
   end
 
   def myinteresteds
-    @interesteds = Interested.all
+    @interesteds = Interested.where(party_id: params[:id])
+    @party = Party.find(params[:id])
+    @total_amount = 0
+    @users_names = []
+
+    @interesteds.each do |interested|
+      @total_amount += interested.willing_pay
+      @users_names[interested.user_id] = User.find(interested.user_id).name
+    end
+
+    @diference = @party.total_cost - @total_amount
+
   end
 
 
@@ -57,7 +68,7 @@ class InterestedsController < ApplicationController
     else
       #si lo llaman desde my interesteds
       @interested = Interested.find(params[:id])
-
+    end
   end
 
   def edit

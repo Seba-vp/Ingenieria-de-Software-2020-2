@@ -74,6 +74,7 @@ Rails.application.routes.draw do
   #parties -> RSPEC DONE 40%
   get 'parties/new', to: "parties#new" 
   post 'parties', to: "parties#create"
+  #post 'parties/new', to: "parties#myparties"
 
   get 'parties/index', to: "parties#index"
   #Esto es nuevo OJO
@@ -92,6 +93,8 @@ Rails.application.routes.draw do
   #para user
   get 'interesteds/unew', to: "interesteds#unew"
   post 'interesteds', to: "interesteds#ucreate"
+
+  post 'interesteds/unew', to: "interesteds#index"
   
   #para admin
   get 'interesteds/new', to: "interesteds#new"
