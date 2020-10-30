@@ -5,12 +5,9 @@
 
 <body>
 
-
-
 <div class="header">
 <h1>CARRETE APP</h1>
 <h2> Carrete app es una aplicación en desarrollo para organizar carretes </h2>
-
 </div>
 
 <div class="topnav">
@@ -21,48 +18,96 @@
 
 
 
-<div class="lista">
-<div class="card">
-    <h2>Ver Usuarios</h2>
-    <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-    <p> <%= link_to "Ir a lista de usuarios", users_index_path%> </p>
-</div>
-<div class="card">
-    <h2> Ver Admins</h2>
-    <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-    <p> <%= link_to "Ir a lista de admins", admins_index_path%> </p>
-</div>
-<div class="card">
-    <h2>Ver Comunas</h2>
-    <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-    <p> <%= link_to "Ir a lista de comunas", comunas_index_path%> </p>
-</div>
-<div class="card">
-    <h2>Ver Carretes</h2>
-    <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-    <p> <%= link_to "Ir a lista de carretes", parties_index_path%> </p>
-</div>
-<div class="card">
-    <h2>Ver Servicios </h2>
-    <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-    <p> <%= link_to "Ir a lista de servicios", services_index_path%> </p>
-</div>
-<div class="card">
-    <h2>Ver Usuarios interesados en Carretes</h2>
-    <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-    <p> <%= link_to "Ir a lista de interesados en carretes", interesteds_index_path%> </p>
-</div>
-<div class="card">
-    <h2>Ver Feedbacks de Servicios</h2>
-    <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-    <p> <%= link_to "Ir a lista de feddbacks", feedbacks_index_path%> </p>
-</div>
-<div class="card">
-    <h2>Ver Posts</h2>
-    <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-    <p> <%= link_to "Ir a lista de posts", posts_index_path%> </p>
-</div>
-</div>
+
+
+<% if current_user %>   
+    <div class="card">
+        <p> Hola usuario, <%= current_user.name %></p>
+
+        <button class="button"> 
+            <%= link_to 'Cerrar sesíon', destroy_user_session_path, :method => :delete  %> 
+        </button>
+    </div>
+
+
+<% elsif current_admin %>
+    
+    <div class="card">    
+        <p> Hola admin, <%= current_admin.name %></p>
+
+            <button class="button"> 
+                <%= link_to 'Cerrar sesíon', destroy_admin_session_path, :method => :delete  %> 
+            </button>
+    </div>
+
+    <div class="lista"> 
+        <div class="card">
+            <h2>Ver Usuarios</h2>
+            <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
+            <p> <%= link_to "Ir a lista de usuarios", users_index_path %> </p>
+        </div>
+        <div class="card">
+            <h2> Ver Admins</h2>
+            <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
+            <p> <%= link_to "Ir a lista de admins", admins_index_path%> </p>
+        </div>
+        <div class="card">
+            <h2>Ver Comunas</h2>
+            <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
+            <p> <%= link_to "Ir a lista de comunas", comunas_index_path%> </p>
+        </div>
+        <div class="card">
+            <h2>Ver Carretes</h2>
+            <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
+            <p> <%= link_to "Ir a lista de carretes", parties_index_path%> </p>
+        </div>
+        <div class="card">
+            <h2>Ver Servicios </h2>
+            <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
+            <p> <%= link_to "Ir a lista de servicios", services_index_path%> </p>
+        </div>
+        <div class="card">
+            <h2>Ver Usuarios interesados en Carretes</h2>
+            <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
+            <p> <%= link_to "Ir a lista de interesados en carretes", interesteds_index_path%> </p>
+        </div>
+        <div class="card">
+            <h2>Ver Feedbacks de Servicios</h2>
+            <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
+            <p> <%= link_to "Ir a lista de feddbacks", feedbacks_index_path%> </p>
+        </div>
+        <div class="card">
+            <h2>Ver Posts</h2>
+            <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
+            <p> <%= link_to "Ir a lista de posts", posts_index_path%> </p>
+        </div>
+    </div>
+
+<% else %>
+
+    <div class="card">
+        
+        <p> No estas conectado </p>
+
+        <button class="button"> 
+            <%= link_to 'Registrarse como usuario', new_user_registration_path %>
+        </button>
+
+        <button class="button"> 
+            <%= link_to 'Registrarse como admin', new_admin_registration_path %>
+        </button>
+
+        <button class="button"> 
+            <%= link_to 'Ingresar como usuario', new_user_session_path %>
+        </button>
+
+        <button class="button"> 
+            <%= link_to 'Ingresar como admin', new_admin_session_path %>
+        </button>
+    </div>
+
+<% end %>
+
 
 
 <div class="footer">

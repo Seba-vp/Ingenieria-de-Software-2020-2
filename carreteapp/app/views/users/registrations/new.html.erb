@@ -1,12 +1,45 @@
+
+
+<div class="card">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+
+  <!-- ESTOS SON LOS ARGUMENTOS NUEVOS --> 
+  <div class="field" >
+    <%= f.label :age%>
+    <%= f.number_field :age%>
+  </div>
+  <div class="field" >
+    <%= f.label :phone%>
+    <%= f.text_field :phone%>
+  </div>
+  <div class="field" >
+    <%= f.label :picture%>
+    <%= f.url_field :picture%>
+  </div>
+  <div class="field" >
+    <%= f.label :id_comuna%>
+    <%= f.number_field :id_comuna%>
+  </div>
+  <div class="field" >
+    <%= f.label :service_enable%>
+    <%= f.check_box :service_enable, {}, true, false %>
+  </div>
+  <!-- ################################################ --> 
+
 
   <div class="field">
     <%= f.label :password %>
@@ -25,5 +58,7 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+
+</div>
 
 <%= render "users/shared/links" %>

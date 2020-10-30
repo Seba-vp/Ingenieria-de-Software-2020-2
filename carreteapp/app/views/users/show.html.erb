@@ -13,7 +13,11 @@
 </div>
 
 <div class="lista">
-<%= image_tag(@user.picture, alt: "like", class: "like_image_for_index") %>
+<% if @user.picture %>
+  <%= image_tag(@user.picture, alt: "like", class: "like_image_for_index") %>
+<% else  %>
+  <p> No hay foto :(</p>
+<% end %>
 
 <div class="card">
 <table>

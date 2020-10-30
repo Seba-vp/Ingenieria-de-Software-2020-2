@@ -17,15 +17,16 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       ##Argumentos propios
 
 
-      t.string :name
+      t.string :name, null: false, default: ""
       t.integer :age
       t.string :phone
       t.string :picture
       t.integer :id_comuna
       t.boolean :service_enable
-      t.string :password
+   
+      ##t.string :password
 
-      t.timestamps
+      
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
@@ -47,7 +48,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
 
 
       # Uncomment below if timestamps were not included in your original model.
-      # t.timestamps null: false
+       t.timestamps null: false
     end
 
     add_index :users, :email,                unique: true
