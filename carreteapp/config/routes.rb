@@ -1,7 +1,23 @@
 Rails.application.routes.draw do
 
+  root to: 'pages#home', as: "home"
 
- 
+  devise_for :users, controllers:{
+    sessions: 'users/sessions', registrations: 'users/registrations'}
+
+    #devise_for :users, path_prefix: 'my', controllers: {
+    #  sessions: 'users/sessions', registrations: 'users/registrations'
+    #}
+  
+
+
+  devise_for :admins , controllers:{
+    sessions: 'admins/sessions', registrations: 'admins/registrations'}
+  
+
+  
+
+  
   #admins
 
 
@@ -119,5 +135,9 @@ Rails.application.routes.draw do
   
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'pages#home', as: "home"
+
+
+
+
+
 end
