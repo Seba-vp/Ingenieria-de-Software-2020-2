@@ -1,8 +1,8 @@
 <p id="notice"> <%= notice %></p>
 
-<div class="header">
+<header>
 <h1> Feedback <%=@feedback.id %> </h1>
-</div>
+</header>
 
 <div class="topnav">
   <a href= <%= home_path %> >Inicio</a>
@@ -35,6 +35,7 @@
 
 <div class="card">
 
+<p> <%= link_to "Editar feedback", feedback_edit_path%> </p>
 
 <p> <%= link_to "Eliminar feedback", feedback_path, method: :delete%> </p>
 
@@ -45,9 +46,7 @@
 </div>
 
 
-<div class="footer">
-    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
-  </div>
+
 </body>
 </html>
 

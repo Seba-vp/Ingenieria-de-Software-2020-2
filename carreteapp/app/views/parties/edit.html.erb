@@ -9,15 +9,15 @@
 
 
 
-<div class="header">
+<header>
 <h1>Editar carrete  </h1>
-</div>
+</header>
 
 
 <div class="topnav">
   <a href= <%= home_path %> >Inicio</a>
 
-  <a href= <%=  party_path(@party.id)%> style="float:right"> Volver</a>
+  <a id="r" <%= link_to "Volver", :back %>>  </a>
 </div>
 
 <div class="lista">
@@ -83,9 +83,7 @@
 </div>
 
 
-<div class="footer">
-    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
-  </div>
+
 </body>
 </html>
 

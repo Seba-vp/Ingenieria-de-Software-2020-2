@@ -1,16 +1,13 @@
 
-<p id="notice"> <%= notice %></p>
 
-
-
-<div class="header">
+<header>
 <h1>  <%=@party.title %> </h1>
-</div>
+</header>
 
 <div class="topnav">
   <a href= <%= home_path %> >Inicio</a>
 
-  <a href= <%= parties_index_path%> style="float:right"> Todos los carretes</a>
+  <a id="r" <%= link_to "Volver", :back %>>  </a>
 </div>
 
 <div class="lista">
@@ -78,9 +75,7 @@
 </div>
 
 
-<div class="footer">
-    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
-  </div>
+
 </body>
 </html>
 

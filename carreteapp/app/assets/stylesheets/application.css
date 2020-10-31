@@ -34,14 +34,24 @@
   header h1 {
     font-size: 50px;
   }
+
   table {
-      margin: auto;
-     
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+    
   }
-  td {
-      padding-bottom: 4%;
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
   }
-  
+
+  .lista {
+    text-align: center;
+    padding: 20x 20px;
+}
+
   /* #no_button {
   
   } */
@@ -114,16 +124,21 @@
   /* COLUMNAS */
   /* Left column */
   .leftcolumn {   
+    padding-left: 1%;
     float: left;
     width: 75%;
+    background-color: #f1f1f1;
+    flex: 1; /* additionally, equal width */
   }
   
   /* Right column */
   .rightcolumn {
     float: left;
     width: 25%;
-   /*  background-color: #f1f1f1; */
+    background-color: #f1f1f1;
     padding-left: 20px;
+    padding-right: 1%;
+    flex: 1; /* additionally, equal width */
   }
   
   img {
@@ -141,7 +156,7 @@
     padding: 20px;
   }
   .card2 {
-    background-color: #dae1e7;
+    background-color:  #f1f1f1;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -155,20 +170,15 @@
     text-align: center;
   }
   
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
   
   /* Footer */
   .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: #333;
     margin-top: 20px;
   }
+  
   
   /* RESPONSIVE */
   @media screen and (max-width: 800px) {
@@ -185,20 +195,7 @@
       width: 100%;
     }
   } 
-  .card2 {
-    background-color: #dae1e7;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  /* Add a card effect for articles */
-  .card {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-  }
+
   
   /* Clear floats after the columns */
   .row:after {
@@ -207,103 +204,6 @@
     clear: both;
   }
   
-  /* Footer */
-  .footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-    margin-top: 20px;
-  }
-  
-  /* RESPONSIVE */
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
-      width: 100%;
-      padding: 0;
-    }
-  }
-  
-  /* NAVBAR ON TOP */
-  @media screen and (max-width: 400px) {
-    .topnav a {
-      float: none;
-      width: 100%;
-    }
-  } 
-  .card2 {
-    background-color: #dae1e7;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  /* Add a card effect for articles */
-  .card {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Footer */
-  .footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-    margin-top: 20px;
-  }
-  
-  /* RESPONSIVE */
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
-      width: 100%;
-      padding: 0;
-    }
-  }
-  
-  /* NAVBAR ON TOP */
-  @media screen and (max-width: 400px) {
-    .topnav a {
-      float: none;
-      width: 100%;
-    }
-  } 
-  .card2 {
-    background-color: white;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  /* Add a card effect for articles */
-  .card {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Footer */
-  .footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-    margin-top: 20px;
-  }
 
 
   .container {
@@ -316,18 +216,8 @@
     clear: both;
   }
   
-  /* RESPONSIVE */
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
-      width: 100%;
-      padding: 0;
-    }
+
+  .row {
+    display: flex; /* equal height of the children */
   }
-  
-  /* NAVBAR ON TOP */
-  @media screen and (max-width: 400px) {
-    .topnav a {
-      float: none;
-      width: 100%;
-    }
-  }
+ 
