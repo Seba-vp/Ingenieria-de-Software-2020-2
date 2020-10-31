@@ -51,6 +51,7 @@
     overflow: hidden;
     background-color:  #333;
     margin-bottom: 2%;
+    margin-top: 2%;
     margin-left: 30%;
     margin-right: 30%;
     /* width: 100%; */
@@ -183,7 +184,7 @@
       float: none;
       width: 100%;
     }
-  } }
+  } 
   .card2 {
     background-color: #dae1e7;
     padding: 10px;
@@ -228,7 +229,7 @@
       float: none;
       width: 100%;
     }
-  } }
+  } 
   .card2 {
     background-color: #dae1e7;
     padding: 10px;
@@ -273,9 +274,9 @@
       float: none;
       width: 100%;
     }
-  } }
+  } 
   .card2 {
-    background-color: #dae1e7;
+    background-color: white;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -302,6 +303,17 @@
     text-align: center;
     background: #ddd;
     margin-top: 20px;
+  }
+
+
+  .container {
+    width: 500px;
+    clear: both;
+  }
+  
+  .container input {
+    width: 100%;
+    clear: both;
   }
   
   /* RESPONSIVE */

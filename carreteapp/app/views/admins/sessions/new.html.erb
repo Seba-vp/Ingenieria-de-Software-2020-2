@@ -1,16 +1,40 @@
-<h2>Log in</h2>
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
 
+<div class="header">
+  <h1>Log in </h1>
+  <h2><%= render "admins/shared/error_messages", resource: resource %><h2>
+</div>
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+  <a id="r" <%= link_to "Volver", :back %>>  </a>
+</div>
+
+
+<div class="card">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+
+<div class="card2">
+<table>
+<tr>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+</tr>
+<tr>
 
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
+</tr>
 
+</table>
+<br/>
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
@@ -18,9 +42,16 @@
     </div>
   <% end %>
 
+<br/>
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
-<% end %>
+  <br/>
 
+<% end %>
+</div>
+
+<div class="card2">
 <%= render "admins/shared/links" %>
+</div>
+</div>

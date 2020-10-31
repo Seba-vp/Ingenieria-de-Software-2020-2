@@ -11,136 +11,162 @@
 </div>
 
 
-
-
-
-
-
 <% if current_user %>
     <div class="topnav">
-    <a href="#">Inicio</a>
-
-    <a href="#" style="float:right">Volver atras</a>
+    <a href="#">CARRETE APP</a>
     </div>   
 
     <div class="card">
+    <div class="card2">
         <h2> Hola usuario, <%= current_user.name %></h2>
 
-        <button class="button"> 
+       <div class="button"> 
             <%= link_to 'Cerrar sesíon', destroy_user_session_path, :method => :delete  %> 
-        </button>
+        </div>
     </div>
 
-    <div class="card">
+    <div class="card2">
         <h2> Editar perfil </h2>
-        <button class="button"> 
+       <div class="button"> 
             <%= link_to 'Editar usuario', edit_user_registration_path  %> 
-        </button>
+        </div>
     </div>
 
-    <div class="card">
+    <div class="card2">
         <h2> Crear Carrete </h2>
-        <button class="button"> 
+       <div class="button"> 
             <%= link_to 'Crear carrete', parties_new_path  %> 
-        </button>
+        </div>
     </div>
 
-    <div class="card">
+    <div class="card2">
         <h2> Ver carretes disponibles </h2>
-        <button class="button"> 
-            <%= link_to 'Ver carretes', parties_index_path  %> 
-        </button>
+       <div class="button"> 
+            <%= link_to 'Ver carretes', parties_uindex_path  %> 
+        </div>
     </div>
 
-    <div class="card">
+    <div class="card2">
         <h2> Ver mis carretes </h2>
-        <button class="button"> 
+       <div class="button"> 
             <%= link_to 'Ver mis carretes', parties_myparties_path  %> 
-        </button>
+        </div>
     </div>
 
-    <div class="card">
+    <div class="card2">
         <h2> Crear servicio </h2>
-        <button class="button"> 
+       <div class="button"> 
             <%= link_to 'Crear servicio', services_new_path  %> 
-        </button>
+        </div>
+    </div>
     </div>
 
 
 <% elsif current_admin %>
     
     <div class="card">    
-        <p> Hola admin, <%= current_admin.name %></p>
+        <h2> Hola admin, <%= current_admin.name %></h2>
 
-            <button class="button"> 
+           <div class="button"> 
                 <%= link_to 'Cerrar sesíon', destroy_admin_session_path, :method => :delete  %> 
-            </button>
+            </div>
+            </div>
+
+            <div class="card">
+                <h2> Editar admin </h2>
+            <div class="button"> 
+                <%= link_to 'Editar admin', edit_admin_registration_path  %> 
+            </div>
+ 
     </div>
 
     <div class="lista"> 
         <div class="card">
             <h2>Ver Usuarios</h2>
             <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-            <p> <%= link_to "Ir a lista de usuarios", users_index_path %> </p>
+        <div class="button"> 
+            <%= link_to "Ir a lista de usuarios", users_index_path %>
+        </div>
         </div>
         <div class="card">
             <h2> Ver Admins</h2>
             <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-            <p> <%= link_to "Ir a lista de admins", admins_index_path%> </p>
+        <div class="button"> 
+            <%= link_to "Ir a lista de admins", admins_index_path%>
+        </div>
         </div>
         <div class="card">
             <h2>Ver Comunas</h2>
             <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-            <p> <%= link_to "Ir a lista de comunas", comunas_index_path%> </p>
+        <div class="button"> 
+           <%= link_to "Ir a lista de comunas", comunas_index_path%>
+        </div>
         </div>
         <div class="card">
             <h2>Ver Carretes</h2>
             <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-            <p> <%= link_to "Ir a lista de carretes", parties_index_path%> </p>
+        <div class="button"> 
+            <%= link_to "Ir a lista de carretes", parties_index_path%>
+        </div>
         </div>
         <div class="card">
             <h2>Ver Servicios </h2>
             <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-            <p> <%= link_to "Ir a lista de servicios", services_index_path%> </p>
+        <div class="button"> 
+            <%= link_to "Ir a lista de servicios", services_index_path%>
+        </div>
         </div>
         <div class="card">
             <h2>Ver Usuarios interesados en Carretes</h2>
             <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-            <p> <%= link_to "Ir a lista de interesados en carretes", interesteds_index_path%> </p>
+        <div class="button"> 
+            <%= link_to "Ir a lista de interesados en carretes", interesteds_index_path%>
+        </div>
         </div>
         <div class="card">
             <h2>Ver Feedbacks de Servicios</h2>
             <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-            <p> <%= link_to "Ir a lista de feddbacks", feedbacks_index_path%> </p>
+        <div class="button"> 
+          <%= link_to "Ir a lista de feddbacks", feedbacks_index_path%>
+        </div>
         </div>
         <div class="card">
             <h2>Ver Posts</h2>
             <p>Para ver la lista de todos los usuarios registrados, haz click en el siguiente boton.</p>
-            <p> <%= link_to "Ir a lista de posts", posts_index_path%> </p>
+        <div class="button"> 
+          <%= link_to "Ir a lista de posts", posts_index_path%>
+        </div>
         </div>
     </div>
 
 <% else %>
 
     <div class="card">
-        
-        <p> No estas conectado </p>
+    <div class="card2">
+        <h2> No estas conectado </h2>
+    </div>
 
-        <button class="button"> 
-            <%= link_to 'Registrarse como usuario', new_user_registration_path %>
-        </button>
-
-        <button class="button"> 
-            <%= link_to 'Registrarse como admin', new_admin_registration_path %>
-        </button>
-
-        <button class="button"> 
+    <div class="card2">
+        <h2> Usuario </h2>
+        <div class="button"> 
             <%= link_to 'Ingresar como usuario', new_user_session_path %>
-        </button>
+        </div>
+       <div class="button"> 
+            <%= link_to 'Registrarse como usuario', new_user_registration_path %>
+        </div>
 
-        <button class="button"> 
+       
+    </div>
+    <div class="card2">
+        <h2> Admin </h2>
+        <div class="button"> 
             <%= link_to 'Ingresar como admin', new_admin_session_path %>
-        </button>
+        </div>
+
+        <div class="button"> 
+            <%= link_to 'Registrarse como admin', new_admin_registration_path %>
+        </div>
+    </div>
     </div>
 
 <% end %>
