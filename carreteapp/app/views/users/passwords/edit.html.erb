@@ -1,25 +1,52 @@
-<h2>Change your password</h2>
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<div class="header">
+  <h1>Change your password </h1>
+  <h2><%= render "users/shared/error_messages", resource: resource %><h2>
+</div>
+
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+  <a id="r" <%= link_to "Volver", :back %>>  </a>
+</div>
+
+<div class="card">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
+ <div class="card2">
+    <table>
+      <tr>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+      <div class="field">
+        <td><%= f.label :password, "New password" %><br /></td>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+        <% end %>
+        <td><%= f.password_field :password, autofocus: true, autocomplete: "new-password" %></td>
+      </div>
+      </tr>
+      
+      <tr>
+      <div class="field">
+        <%= f.label :password_confirmation, "Confirm new password" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      </tr>
+      
+    </table>
+    
+    <br/>
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+</div>
 
 <%= render "users/shared/links" %>

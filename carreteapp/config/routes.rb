@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   
 
   
-
-  
   #admins
 
 
@@ -79,6 +77,7 @@ Rails.application.routes.draw do
   get 'parties/index', to: "parties#index"
   #Esto es nuevo OJO
   get 'parties/myparties', to: "parties#myparties"
+  get 'parties/uindex', to: "parties#uindex"
 
 
   get 'parties/:id', to: "parties#show", as: "party"

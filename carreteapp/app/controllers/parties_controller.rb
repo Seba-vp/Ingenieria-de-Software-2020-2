@@ -4,6 +4,11 @@ class PartiesController < ApplicationController
     @parties = Party.all
   end
 
+  def uindex 
+    @parties = Party.where("id_creator != ?", current_user.id)
+
+  end
+
   def myparties
     #Person.where(name: 'Spartacus', rating: 4).select("field1, field2, field3")
     #Post.find_by name: 'Spartacus', rating: 4
