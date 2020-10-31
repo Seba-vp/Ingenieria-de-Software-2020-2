@@ -1,2 +1,63 @@
-<h1>Feedbacks#edit</h1>
-<p>Find me in app/views/feedbacks/edit.html.erb</p>
+
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+
+
+<header>
+<h1>Editar feedback  </h1>
+</header>
+
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%=   feedback_path(@feedback.id)%> style="float:right"> Volver</a>
+</div>
+
+<div class="lista">
+
+<% if notice %>
+<div class="card">
+<h4><%= notice%> </h4>
+</div>
+<% end %>
+
+<%= form_with(model: @feedback , method: :patch, url: feedback_update_path(@feedback.id) ) do |form| %>
+    <div class="card">
+    <div class="field" >
+        <%= form.label :comment%>
+        <%= form.text_area :comment%>
+    </div>
+    <div class="field" >
+        <%= form.label :stars%>
+        <%= form.number_field :stars%>
+    </div>
+    <div class="field" >
+        <%= form.label :service_id%>
+        <%= form.number_field :service_id%>
+    </div>
+
+    <div class="action" >
+        <%= form.submit %>
+
+</div>
+    </div>
+
+<% end %>
+<div class="card">
+<p> <%= link_to "Volver al feedback", feedback_path(@feedback.id)%> </p>
+</div>
+</div>
+
+
+
+</body>
+</html>
+
+
+

@@ -1,14 +1,12 @@
-<html>
+
 <head>
 <%= stylesheet_link_tag "application" %>
 </head>
 
-<body>
-
-<div class="header">
+<header>
 <h1>CARRETE APP</h1>
 <h2> Carrete app es una aplicación en desarrollo para organizar carretes </h2>
-</div>
+</header>
 
 
 <% if current_user %>
@@ -16,50 +14,72 @@
     <a href="#">CARRETE APP</a>
     </div>   
 
-    <div class="card">
-    <div class="card2">
-        <h2> Hola usuario, <%= current_user.name %></h2>
+    <div class="leftcolumn">
+        <div class="card">
+            <div class="card2">
+                <h2> Hola usuario, <%= current_user.name %></h2>
 
-       <div class="button"> 
-            <%= link_to 'Cerrar sesíon', destroy_user_session_path, :method => :delete  %> 
+                <div class="button"> 
+                    <%= link_to 'Cerrar sesíon', destroy_user_session_path, :method => :delete  %> 
+                </div>
+            </div>
+
+            <div class="card2">
+                <h2> Editar perfil </h2>
+                <div class="button"> 
+                    <%= link_to 'Editar usuario', edit_user_registration_path  %> 
+                </div>
+            </div>
+
+            <div class="card2">
+                <h2> Crear Carrete </h2>
+                <div class="button"> 
+                    <%= link_to 'Crear carrete', parties_new_path  %> 
+                </div>
+            </div>
+
+            <div class="card2">
+                <h2> Ver carretes disponibles </h2>
+                <div class="button"> 
+                    <%= link_to 'Ver carretes', parties_uindex_path  %> 
+                </div>
+            </div>
+
+            <div class="card2">
+                <h2> Ver mis carretes </h2>
+                <div class="button"> 
+                    <%= link_to 'Ver mis carretes', parties_myparties_path  %> 
+                </div>
+            </div>
+
+            <% if current_user.service_enable%>
+            <div class="card2">
+                <h2> Crear servicio </h2>
+                
+                <div class="button"> 
+                        <%= link_to 'Crear servicio', services_new_path  %> 
+                </div>
+            </div>
+                
+            <% end %>
         </div>
     </div>
 
-    <div class="card2">
-        <h2> Editar perfil </h2>
-       <div class="button"> 
-            <%= link_to 'Editar usuario', edit_user_registration_path  %> 
+    <div class="rightcolumn">
+        <div class="card">
+            <% @posts.each do |post| %>
+                <h3> <% post.title %> </h3>
+                <div class="card2">
+                    <%= image_tag(post.picture, alt: "like", class: "like_image_for_index") %>
+                </div>
+                <div class="button">
+                    <%= link_to "Ver mas", post_path(post.id) %>
+                </div>
+            <% end %>
         </div>
     </div>
 
-    <div class="card2">
-        <h2> Crear Carrete </h2>
-       <div class="button"> 
-            <%= link_to 'Crear carrete', parties_new_path  %> 
-        </div>
-    </div>
 
-    <div class="card2">
-        <h2> Ver carretes disponibles </h2>
-       <div class="button"> 
-            <%= link_to 'Ver carretes', parties_uindex_path  %> 
-        </div>
-    </div>
-
-    <div class="card2">
-        <h2> Ver mis carretes </h2>
-       <div class="button"> 
-            <%= link_to 'Ver mis carretes', parties_myparties_path  %> 
-        </div>
-    </div>
-
-    <div class="card2">
-        <h2> Crear servicio </h2>
-       <div class="button"> 
-            <%= link_to 'Crear servicio', services_new_path  %> 
-        </div>
-    </div>
-    </div>
 
 
 <% elsif current_admin %>
@@ -171,11 +191,11 @@
 
 <% end %>
 
-
-
 <div class="footer">
-    <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
-  </div>
-</body>
-</html>
+      <p>Made with &#10084;&#65039; by Sebastian Villablanca  & Javier Zagal.</p>
+</div>
+
+
+
+
 
