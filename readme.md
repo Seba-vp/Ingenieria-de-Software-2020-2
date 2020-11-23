@@ -10,34 +10,16 @@
 
 :rage1: Javier Zagal 
 
-# Entrega 2
+# Entrega 3
 
-## Concideraciones generales:
+## Consideraciones generales:
 
 Hay 2 tipos de usuarios, User y Admin, se puede hacer sin-up y log-in de cada tipo desde el home.
 El admin tiene acceso a todas las entidades desde una pagina de CRUDS.
 El usuario tiene acceso restringido a distintas funcionalidades deacuero a si este es o no prestador de servicios (service_enable), o si tiene o no carretes propios.
-
-## Cosas pendientes de la entrega pasada:
-Agregamos edit a la entidad Feedback.
-Hicimos los usuarios con devise.
+Por ahora, para enviar los codigos y cerrar la postulación a un carrete, el creador del carrete debe hacerlo desde la pagina Mis Carretes > Ver más > Cerrar postulación y enviar codigo. Este codigo le llegará por correo a los asistentes. El usuario postulante también puede ver el codigo desde mis postulaciones una vez que fue enviada. 
 
 
-## Asociaciones:
-Hicimos todas las asociaciones definidas en nuestro diagrama entidad relacion.
-
-## Flujo basico de los bids:
-Un usuario puede crear un carrete con sus respectivos parametros (Boton ´´Crear carrete´´ en el home).
-Un usuario puede acceder a sus carretes propios (Boton ´´Ver mis carretes´´en el home)
-    El usuario pude ver quienes han postulado a su carrete y puede ver la recaudacion total hasta el momento, el costo total del carrete y la diferencia entre abmos valores.
-Un usuario puede ver los carretes disponibles, solo aquellos que el usuario no creo (Boton ´´Ver carretes disponibles´´en el home).
-    El usuario puede postular a un carrete e indicar cuanto esta dispuesto a pagar.
-
-## Funcionalidades extras:
-
-Un usuario puede editar y eliminar su perfil, puede esitar y eliminar sus carretes.
-
-Si el usuario es prestador de servicios, tiene disponible el boton para crear un servicio.
 
 
 
