@@ -7,6 +7,8 @@ class CreateServices < ActiveRecord::Migration[5.2]
       t.float :price
       t.string :picture
       t.integer :stars
+      t.integer :id_creador
+      t.integer :id_comuna
 
       t.timestamps
     end

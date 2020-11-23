@@ -1,0 +1,36 @@
+
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+<header>
+<h1>Codigos enviados correctamente </h1>
+
+
+</header>
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= interesteds_myinteresteds_path(:id => @party.id) %> style="float:right"> Volver</a>
+</div>
+
+
+<div class="card">
+
+<p> <%= link_to "Volver a los interesados en el carrete", interesteds_myinteresteds_path(:id => @party.id) %> </p>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>
+
+
+

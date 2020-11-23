@@ -8,9 +8,9 @@
 <body>
 
 <header>
-<h1>Carretes de <%=@user.name%> </h1>
+<h1>Servicios de <%=@user.name%> </h1>
 
-<% @parties %>
+<%= @services %>
 </header>
 
 <div class="topnav">
@@ -34,13 +34,12 @@
 
     <tbody>
 
-        <% @parties.each do |party| %>
+        <% @services.each do |service| %>
             <tr>
-            <td> <%=party.id %></td>
-            <td> <%=party.title %></td>
-            <td> <%= link_to "Ver mas", party_path(party.id) %></td>
-    
-
+            <td> <%=service.id %></td>
+            <td> <%=service.id_creador %></td>
+            <td> <%=service.name %></td>
+            <td> <%= link_to "Ver mas", service_path(service.id) %></td>
             </tr>
         <% end %>
 
@@ -61,6 +60,8 @@
 
 </body>
 </html>
+
+
 
 
 

@@ -52,6 +52,13 @@
                 </div>
             </div>
 
+            <div class="card2">
+                <h2> Ver estado de mis postulaciones </h2>
+                <div class="button"> 
+                    <%= link_to 'Ver mis postulaciones', interested_postulaciones_path  %> 
+                </div>
+            </div>
+
             <% if current_user.service_enable%>
             <div class="card2">
                 <h2> Crear servicio </h2>
@@ -60,6 +67,14 @@
                         <%= link_to 'Crear servicio', services_new_path  %> 
                 </div>
             </div>
+            <div class="card2">
+                <h2> Mis servicios </h2>
+            
+            <div class="button"> 
+                    <%= link_to 'Ver servicios', services_myservices_path  %> 
+            </div>
+            </div>
+            
                 
             <% end %>
         </div>

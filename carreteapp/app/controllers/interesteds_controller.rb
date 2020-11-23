@@ -19,10 +19,32 @@ class InterestedsController < ApplicationController
     end
 
     @diference = @party.total_cost - @total_amount
-
   end
 
+  def postulaciones
+    @postulaciones = Interested.where(user_id: current_user.id)
+    @parties_names = []
+    @postulaciones.each do |postulacion|
+        @parties_names[postulacion.id] = Party.find(postulacion.party_id).title
 
+      end
+  end
+
+  def invitations
+    @party = Party.find(params[:id])
+    @interesteds = Interested.where(party_id: params[:id]).order(:willing_pay)
+    
+    for interested in @interesteds do
+      @interested_user = User.find(interested.user_id) 
+      @invitation_code= String(@party.title) +'#'+ String(@party.id) +'#'+ String( @interested_user.name ) +'#'+ String(interested.id ) +'#'
+      @interesteds_params = {}
+      @interesteds_params[:code] = @invitation_code
+      interested.update(@interesteds_params)
+
+      UserMailer.code_email(@interested_user, @party.title, @invitation_code).deliver
+    end
+
+  end
 
   def unew
     @interested = Interested.new
@@ -63,7 +85,7 @@ class InterestedsController < ApplicationController
 
   def show
     if params
-      #si lo llaman desde intereds index
+      #si lo llaman desde interesteds index
       @interested = Interested.find(params[:id])
     else
       #si lo llaman desde my interesteds

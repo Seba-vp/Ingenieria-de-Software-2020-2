@@ -31,48 +31,44 @@
 <%= form_with(model: @party , method: :post) do |form| %>
 
     <div class="field" >
-        <%= form.label :title%>
+        <%= form.label 'Nombre de la fiesta'%>
         <%= form.text_field :title%>
     </div>
     <div class="field" >
-        <%= form.label :description%>
-        <%= form.text_area :decription%>
+        <%= form.label 'Descripción' %>
+        <%= form.text_area :description%>
     </div>
     <div class="field" >
-        <%= form.label :address%>
+        <%= form.label 'Dirección'%>
         <%= form.text_field :address%>
     </div>
     <div class="field" >
-        <%= form.label :picture%>
+        <%= form.label 'Foto'%>
         <%= form.url_field :picture%>
     </div>
     <div class="field" >
-        <%= form.label :id_comuna%>
-        <%= form.number_field :id_comuna%>
+        <%= form.label 'Costo extra'%>
+        <%= form.number_field :extra_cost%>
     </div>
     <div class="field" >
-        <%= form.label :base_cost%>
-        <%= form.number_field :base_cost%>
-    </div>
-    <div class="field" >
-        <%= form.label :total_cost%>
-        <%= form.number_field :total_cost%>
-    </div>
-    <div class="field" >
-        <%= form.label :max_cap%>
+        <%= form.label 'Capacidad maxima'%>
         <%= form.number_field :max_cap%>
     </div>
     <div class="field" >
-        <%= form.label :date%>
+        <%= form.label 'Fecha de la fiesta'%>
         <%= form.datetime_field :date%>
     </div>
     <div class="field" >
-        <%= form.label :date_final%>
+        <%= form.label 'Fecha fin de la recaudación'%>
         <%= form.datetime_field :date_final%>
     </div>         
+    <div class="field" >
+        <%= form.label 'Servicio'%>
+        <%= form.collection_select :service, @services.order(:name),:id,:name, include_blank: true%>
+    </div>
+
     <div class="action" >
         <%= form.submit %>
-
     </div>
 
 <% end %>

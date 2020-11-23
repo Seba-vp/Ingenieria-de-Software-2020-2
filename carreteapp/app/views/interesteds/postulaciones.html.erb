@@ -1,0 +1,68 @@
+
+<html>
+<head>
+<%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+
+<header>
+<h1>Mis postulaciones a carretes </h1>
+</header>
+
+<div class="topnav">
+  <a href= <%= home_path %> >Inicio</a>
+
+  <a href= <%= home_path %> style="float:right"> Volver</a>
+</div>
+
+
+<div class="lista">
+
+
+<div class="card">
+
+<table>
+    <thead>
+        <tr>
+            <th> Nombre del carrete </th>
+            <th> Estado </th>
+            <th> Codigo </th>
+        </tr>   
+    </thead>
+
+    <tbody>
+        
+        <% @postulaciones.each do |postulacion| %>
+            <tr>
+            <td> <%= @parties_names[postulacion.id] %></td>
+            <% if postulacion.code != 'null' %> 
+                <td> Aceptado</td>
+            <% else %>
+                <td> Pendiente </td>
+            <% end %>
+            <td> <%= postulacion.code %></td>
+            </tr>
+        <% end %>
+
+
+    </tbody>
+</table>
+</div>
+
+
+<div class="card">
+<p> <%= link_to "Volver al inicio", home_path %> </p>
+</div>
+
+</div>
+
+
+
+
+
+</body>
+</html>
+
+
+

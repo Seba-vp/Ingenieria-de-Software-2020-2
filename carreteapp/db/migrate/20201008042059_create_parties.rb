@@ -9,6 +9,8 @@ class CreateParties < ActiveRecord::Migration[5.2]
       t.float :base_cost
       t.float :total_cost
       t.integer :max_cap
+      t.integer :service
+      t.integer :extra_cost
       t.datetime :date
       t.datetime :date_final
 

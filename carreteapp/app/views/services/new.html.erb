@@ -39,6 +39,11 @@
     </div>
 
     <div class="field" >
+        <%= form.label :Comuna %>
+        <%= form.collection_select :id_comuna, Comuna.order(:name),:id,:name, include_blank: false%>
+    </div>
+
+    <div class="field" >
         <%= form.label :description %>
         <%= form.text_field :description %>
     </div>
@@ -58,10 +63,12 @@
         <%= form.number_field :price%>
     </div>
 
+    <% if current_admin %>
     <div class="field" >
         <%= form.label :stars%>
         <%= form.number_field :stars%>
     </div>
+    <% end %>
         
     <div class="action" >
         <%= form.submit %>

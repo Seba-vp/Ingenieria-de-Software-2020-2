@@ -57,6 +57,9 @@ Rails.application.routes.draw do
   delete 'feedbacks/:id', to: "feedbacks#delete"
 
   #services -> RSPEC DONE 40%
+    #Esto es nuevo OJO
+  get 'services/myservices', to: "services#myservices"
+  #
   get 'services/new', to: "services#new" 
   post 'services', to: "services#create"
 
@@ -88,6 +91,7 @@ Rails.application.routes.draw do
   delete 'parties/:id', to: "parties#delete"
 
  #Interesteds -> RSPEC DONE 40%
+ 
 
   #para user
   get 'interesteds/unew', to: "interesteds#unew"
@@ -102,7 +106,10 @@ Rails.application.routes.draw do
   get 'interesteds/index', to: "interesteds#index"
 
   #Esto es nuevo OJO
+  get 'interesteds/invitations', to: "interesteds#invitations", as: "send_invitations"
+
   get 'interesteds/myinteresteds', to: "interesteds#myinteresteds"
+  get 'interesteds/postulaciones', to: "interesteds#postulaciones", as: "interested_postulaciones"
 
   get 'interesteds/:id', to: "interesteds#show", as: "interested"
 
@@ -110,6 +117,8 @@ Rails.application.routes.draw do
   patch 'interesteds/:id', to:"interesteds#update", as: "interested_update"
 
   delete 'interesteds/:id', to: "interesteds#delete"
+
+  
   
   
   #Users -> RSPEC DONE 40%

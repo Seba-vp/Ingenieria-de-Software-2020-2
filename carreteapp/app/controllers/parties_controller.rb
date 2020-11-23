@@ -20,14 +20,19 @@ class PartiesController < ApplicationController
   
   def new
     @party = Party.new
+    @comunas = Comuna.all
+    @services = Service.where(id_comuna: current_user.id_comuna)
    
   end
 
   def create
-    @user_id = current_user.id
-    @parties_params = params.require(:party).permit(:title, :description, :address, :picture, :id_comuna, :base_cost, :total_cost, :max_cap, :date , :date_final)
+    @parties_params = params.require(:party).permit(:title, :description, :address, :picture, :extra_cost, :max_cap, :date , :date_final, :service)
     @parties_params[:id_creator] = current_user.id
-  
+    @parties_params[:id_comuna] = current_user.id_comuna
+    @service = Service.find(@parties_params[:service])
+    @parties_params[:base_cost] = @service.price
+    @parties_params[:total_cost] = Float(@parties_params[:base_cost]) + Float(@parties_params[:extra_cost])
+    
     @party = Party.create(@parties_params)
     
     if @party.save

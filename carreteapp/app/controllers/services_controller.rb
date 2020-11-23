@@ -3,12 +3,18 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
+  def myservices    
+    @services = Service.where(id_creador: current_user.id)
+    @user = current_user
+  end
+  
   def new
     @service = Service.new
   end
 
   def create
-    @services_params = params.require(:service).permit(:name, :age, :phone, :picture, :id_comuna, :service_enable, :password)
+    @services_params = params.require(:service).permit(:name, :description, :max_cap, :picture, :stars, :id_comuna, :price)
+    @services_params[:id_creador] = current_user.id
     @service = Service.create(@services_params)
     
     if @service.save
@@ -52,4 +58,7 @@ class ServicesController < ApplicationController
     redirect_to services_index_path
 
   end
+
+
+  
 end

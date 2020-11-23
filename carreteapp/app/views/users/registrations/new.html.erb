@@ -53,8 +53,8 @@
   
 <tr>
   <div class="field" >
-    <td><%= f.label :id_comuna%></td>
-    <td><%= f.number_field :id_comuna%></td>
+    <td><%= f.label :Comuna%></td>
+    <td> <%= f.collection_select :id_comuna, Comuna.order(:name),:id,:name, include_blank: true %></td>
   </div>
 </tr>
   
